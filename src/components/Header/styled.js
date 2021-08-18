@@ -10,7 +10,7 @@ export const HeaderPage = styled.div`
         margin: 0 auto;
         align-items: center;
         justify-content: space-between;
-        background-color: rgba(0, 0, 0,0.6);
+        background-color: rgba(0, 0, 0,0.5);
         color:#fff;
         
         .logo{
