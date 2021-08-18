@@ -42,6 +42,7 @@ const Pizzas = ()=>{
         
       
         <PizzasPage>
+            
             <Header className="header"/>
 
             <div className="container">
