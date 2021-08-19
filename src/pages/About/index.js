@@ -2,9 +2,6 @@ import React from 'react';
 import {useHistory} from 'react-router-dom';
 import { AboutPage } from './styled';
 
-import imgAbout  from '../../assets/image/imgAbout.svg';
-
-
 const About = ()=>{
     const history = useHistory();
 
