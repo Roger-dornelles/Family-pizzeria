@@ -11,11 +11,11 @@ const Signin = ()=>{
 
     const { register, handleSubmit, formState:{ errors } } = useForm({
         resolver: yupResolver(SigninSchema)
-      });
-      const onSubmit =( data,event) =>{
+    });
+    const onSubmit =( data,event) =>{
         event.preventDefault();
         console.log(data);
-      };
+    };
 
 
     const handleClose = ()=>{
@@ -29,21 +29,19 @@ const Signin = ()=>{
                     <h2>LOGIN</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
 
-                    <label>
-                        E-mail: 
-                        <input type="email" {...register("email")} />
-                        <p>{errors.email?.message}</p>
-                    </label>
+                        <label>
+                            E-mail: 
+                            <input type="email" {...register("email")} />
+                            <p>{errors.email?.message}</p>
+                        </label>
 
-                    <label>
-                        Senha: 
-                        <input type="text" {...register("password", {min:6, max:22})} />
-                        <p>{errors.password?.message}</p>
-                    </label>
+                        <label>
+                            Senha: 
+                            <input type="text" {...register("password", {min:6, max:22})} />
+                            <p>{errors.password?.message}</p>
+                        </label>
 
-
-                         <div className="btn">
-
+                        <div className="btn">
                             <button className="btn-cancel" onClick={handleClose}>Cancelar</button>
                             <button>Login</button>
                         </div>

@@ -12,16 +12,16 @@ const Signup = ()=>{
 
     const { register, handleSubmit, formState:{ errors } } = useForm({
         resolver: yupResolver(SignupSchema)
-      });
-      const onSubmit =( data,event) =>{
+    });
+
+    const onSubmit =( data,event) =>{
         event.preventDefault();
         console.log(data);
-      };
+    };
 
-
-      const handleClose = ()=>{
-          history.replace('/');
-      }
+    const handleClose = ()=>{
+        history.replace('/');
+    };
 
     return (
         <SignupPage>
@@ -73,7 +73,7 @@ const Signup = ()=>{
                     </div>
                 </form>
             </div>
-       
+
         </SignupPage>
     )
 };

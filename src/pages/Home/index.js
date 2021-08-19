@@ -16,13 +16,13 @@ const Home = ()=>{
     return(
 
         <HomePage style={background} >
-           <Header />
+            <Header />
             <h1>
                 Ha mais de 12 anos no mercado de delivery,
                 nossas pizzas são produzidas com produtos selecionados e assadas no forno
                 a lenha para um sabor irresistivel.
             </h1>
-      </HomePage>
+        </HomePage>
     )
 };
 
