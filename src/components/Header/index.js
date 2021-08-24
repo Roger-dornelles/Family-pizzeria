@@ -3,7 +3,11 @@ import { Link } from 'react-router-dom';
 
 import { HeaderPage } from './styled';
 
+//helpers
+import {isLogged} from '../../helpers/AuthHandler';
+
 const Header = ()=>{
+    const logged = isLogged();
 
     return(
         <HeaderPage>
@@ -16,8 +20,17 @@ const Header = ()=>{
                         <ul>
                             <li><Link to="/About">Sobre</Link></li>
                             <li><Link to="/Pizzas">Pizzas</Link></li>
-                            <li><Link to="/Signin">Login</Link></li>
-                            <li><Link to="/Signup">Cadastrar-se</Link></li>
+
+                            {!logged && 
+                                <>
+                                    <li><Link to="/Signup">Cadastrar-se</Link></li>
+                                    <li><Link to="/Signin">Login</Link></li>
+                                </>
+                            }
+
+                            {logged &&
+                                <li><Link to="/">Sair</Link></li>
+                            }
                         </ul>
 
                     </nav>

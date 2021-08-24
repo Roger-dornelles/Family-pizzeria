@@ -3,7 +3,11 @@ import Modal from 'react-modal';
 
 import { PizzasPage } from './styled';
 
+// components
 import Header from '../../components/Header';
+
+//helpers
+import {isLogged} from '../../helpers/AuthHandler';
 
 
 const customStyles = {
@@ -21,32 +25,33 @@ const customStyles = {
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
     },
-  };
+};
 const Pizzas = ()=>{
-  const [modalIsOpen, setIsOpen] = useState(false);
+    const [modalIsOpen, setIsOpen] = useState(false);
+    const logged = isLogged();
 
-  function openModal() {
+    function openModal() {
     setIsOpen(true);
-  }
+    }
 
-  function afterOpenModal() {
+    function afterOpenModal() {
 
-  }
+    }
 
-  function closeModal() {
-    setIsOpen(false);
-  }
+    function closeModal() {
+        setIsOpen(false);
+    }
 
     return (
 
-        
-      
         <PizzasPage>
             
             <Header className="header"/>
 
             <div className="container">
-                <button onClick={openModal}>Cart</button>
+                {logged && 
+                    <button onClick={openModal}>Cart</button>
+                }
                 <div className="modal">
                     <Modal
                         isOpen={modalIsOpen}
@@ -66,7 +71,6 @@ const Pizzas = ()=>{
                     
             </div>
         </PizzasPage>
-      
     )
 };
 
