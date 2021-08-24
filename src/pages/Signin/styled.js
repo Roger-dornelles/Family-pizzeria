@@ -22,7 +22,6 @@ export const SigninPage = styled.div`
         background-color: rgba(0,0,0,0.6);
         padding: 25px;
         color: white;
-   
 
         h2{
             text-align: center;
@@ -36,6 +35,21 @@ export const SigninPage = styled.div`
             align-items: center;
             color: white;
             font-size: 22px;
+
+            p.error, .success{
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                background-color:#ffff8a;
+                color: black;
+                font-size: 16px;
+                margin-top:7px;
+            }
+
+            .success{
+                background-color: #55ff80;
+            }
+
             label{
                 width: 100%;
                 margin-bottom: 40px;
@@ -50,8 +64,9 @@ export const SigninPage = styled.div`
                     text-align: center;
                     color: white;
                 }
-                p{
+                p,.error{
                     display: flex;
+                    width: 100%;
                     justify-content: center;
                     background-color:#ffff8a;
                     color: black;
@@ -99,7 +114,6 @@ export const SigninPage = styled.div`
             width: 70%;
             height: 50%;
 
-
             form{
                 width: 100%;
                 
@@ -107,30 +121,28 @@ export const SigninPage = styled.div`
                 .btn{
                 display: flex;
 
+                    button{
+                        margin-top:15px;
+                        width: 80px;
 
-                button{
-                    margin-top:15px;
-                    width: 80px;
-
+                    }
                 }
-               
-            }
             }
         }
-        }
+    }
     @media screen and (max-width:770px){
 
         .signin{
             width: 90%;
             height: 90%;
 
-
             form{
                 width: 100%;
-                .btn{
-                display: flex;
-                flex-direction: column;
 
+                .btn{
+                    display: flex;
+                    flex-direction: column;
+                }
 
                 button{
                     margin-top:5px;
@@ -139,7 +151,7 @@ export const SigninPage = styled.div`
                 }
             }
         }
-        }
+    }
 
 
 `;

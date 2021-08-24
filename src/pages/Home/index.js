@@ -1,14 +1,16 @@
+
 import React from 'react';
-import {HomePage } from './styled';
+import { HomePage } from './styled';
 
 import img from '../../assets/image/imghome.svg';
 
 import Header from '../../components/Header';
 
+
 const Home = ()=>{
 
     const background = {
-        backgroundImage: `url(${img})`, 
+        backgroundImage: `url(${img})`,
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat'

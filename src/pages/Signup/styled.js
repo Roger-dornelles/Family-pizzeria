@@ -27,14 +27,25 @@ export const SignupPage = styled.div`
             line-height: 25px;
             margin-bottom: 18px;
         }
-
+        
         form{
             width: 100%;
             display: flex;
             justify-content:center;
             align-items: center;
             flex-direction: column;
+            
+            .error, .success{
+                width: 60%;
+                display: flex;
+                justify-content: center;
+                background-color: #ff5959;
+                color: #000000;           
+            }
 
+            .success{
+                background-color: #00d936;
+            }
 
             label{
                 width: 60%;
@@ -51,13 +62,17 @@ export const SignupPage = styled.div`
                     font-size: 18px;
                 }
 
-                p{
+                p,.error{
                     width: 100%;
                     display: flex;
                     justify-content: center;
                     background-color: #ffff79;
                     color: #000000;
                     
+                }
+
+                >.success{
+                    background-color: #75ff98;
                 }
             }
 

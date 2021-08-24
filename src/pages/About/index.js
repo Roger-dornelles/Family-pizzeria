@@ -5,14 +5,14 @@ import { AboutPage } from './styled';
 const About = ()=>{
     const history = useHistory();
 
-
     const handleClose = ()=>{
         history.replace('/');
     }
+
     return (
         <AboutPage >
             <div className="container">
-                <h1 onClick={handleClose}>X</h1>
+                <button onClick={handleClose}>X</button>
 
                 <div className='description'>
                     <h2>Quem Somos.</h2>

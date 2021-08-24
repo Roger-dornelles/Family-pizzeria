@@ -1,22 +1,70 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
+
+
 import { SignupPage } from './styled';
 
+//helpers
 import {SignupSchema} from '../../helpers/SchemaValidators';
+import { doLogin } from '../../helpers/AuthHandler';
+
+import api from '../../api';
 
 const Signup = ()=>{
     const history = useHistory();
+    const [ remenberPass,setRemenberPass ] = useState('');
+    const [alert,setAlert] = useState('');
+    const [error,setError] = useState('');
+    const [success,setSuccess] = useState('');
 
     const { register, handleSubmit, formState:{ errors } } = useForm({
         resolver: yupResolver(SignupSchema)
     });
 
-    const onSubmit =( data,event) =>{
+    const onSubmit = async( data,event) =>{
         event.preventDefault();
-        console.log(data);
+
+        if(data.password !== remenberPass){
+            setAlert('Senhas são diferentes.');
+            setTimeout(() =>{
+                setAlert('');
+            },2300);
+            return;
+        };
+        
+        let name = data.name;
+        let email = data.email;
+        let password = data.password;
+        let address = data.address;
+        let district = data.district;
+        let telephone = data.telephone;
+        const json = await api.signup(name,email,password,address,telephone,district);
+
+        if(json.error){
+            for(let i in json.error){
+                setError(json.error[i].msg)
+                setTimeout(()=>{ 
+                    setError('');
+                },2500);
+                return;
+            };
+        }
+
+        if(json.token){
+            doLogin(json.token);
+            setSuccess('Usuario cadastrado com sucesso.');
+            setTimeout(()=>{
+                window.location.href ='/';
+            },2500);
+
+        }
+
+        
+        
+
     };
 
     const handleClose = ()=>{
@@ -32,6 +80,8 @@ const Signup = ()=>{
                 </h3>
 
                 <form onSubmit={handleSubmit(onSubmit)}>
+                    {error && <p className="error">{error}</p>}
+                    {success && <p className="success">{success}</p>}
                     <label>
                         Nome: 
                         <input type="text" {...register("name",{minLength:2})} />
@@ -42,6 +92,12 @@ const Signup = ()=>{
                         E-mail: 
                         <input type="email" {...register("email")} />
                         <p>{errors.email?.message}</p>
+                    </label>
+
+                    <label>
+                        Bairro: 
+                        <input type="text" {...register("district")} />
+                        <p>{errors.district?.message}</p>
                     </label>
 
                     <label>
@@ -64,7 +120,8 @@ const Signup = ()=>{
 
                     <label>
                         Confirmar senha: 
-                        <input type="text" />
+                        <input type="text" value={remenberPass} onChange={e=>setRemenberPass(e.target.value)}/>
+                        <p>{alert}</p>
                     </label>
 
                     <div className='btn'>

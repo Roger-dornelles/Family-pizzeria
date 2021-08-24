@@ -13,9 +13,13 @@ export const AboutPage = styled.div`
         
         width: 80%;
 
-        h1{
-            padding-top:30px;
+        >button{
+            margin-top:30px;
             color: #ff0006;
+            font-size:30px;
+            background-color: rgba(0,0,0,0.5);
+            outline: none;
+            border: none;
             cursor: pointer;
         }
 
@@ -82,7 +86,7 @@ export const AboutPage = styled.div`
 
         .description{
             width: 80%;
-     
+
         }
 
         .description-info{
@@ -118,7 +122,7 @@ export const AboutPage = styled.div`
 
                 .card{
                         width: 100%;
-                       
+                    
                         
                         span{
                             margin-top:35px;

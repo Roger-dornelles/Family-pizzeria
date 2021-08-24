@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -6,15 +6,45 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { SigninPage } from './styled';
 
 import {SigninSchema} from '../../helpers/SchemaValidators';
+
+import {doLogin} from '../../helpers/AuthHandler';
+
+import api  from '../../api';
 const Signin = ()=>{
     const history = useHistory();
+
+    const [error,setError ] = useState('');
+    const [ success,setSuccess ] = useState('');
 
     const { register, handleSubmit, formState:{ errors } } = useForm({
         resolver: yupResolver(SigninSchema)
     });
-    const onSubmit =( data,event) =>{
+    const onSubmit =async( data,event) =>{
         event.preventDefault();
-        console.log(data);
+        const email = data.email;
+        const password = data.password;
+
+        let json = await api.signin(email,password);
+        console.log(json);
+        if(json.error){
+
+            for(let i in json.error){
+                setError(json.error[i].msg);
+                setTimeout(() => {
+                    setError('');
+                },2500)
+            }
+            return;
+        }else{
+            doLogin(json.token);
+            setSuccess('Usuario logado com sucesso.')
+            setTimeout(() => {
+                window.location.href='/';
+                
+            },2700);
+            
+        }
+        
     };
 
 
@@ -28,6 +58,8 @@ const Signin = ()=>{
                 <div className="signin">
                     <h2>LOGIN</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
+                        {success && <p className="success">{success}</p>}
+                        {error && <p className="error">{error}</p>}
 
                         <label>
                             E-mail: 
