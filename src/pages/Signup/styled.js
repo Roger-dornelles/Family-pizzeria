@@ -45,7 +45,6 @@ export const SignupPage = styled.div`
 
             .success{
                 background-color: #00d936;
-                color: #000000;
             }
 
             label{
