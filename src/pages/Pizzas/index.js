@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React,{useState,useEffect} from 'react';
 import {useDispatch,useSelector} from 'react-redux';
 
@@ -115,7 +116,7 @@ const Pizzas = ()=>{
                                             <span>R$: {(item.price * item.qt).toFixed(2)}</span>
                                             <div className='itens'>
                                                 <span style={{cursor:'pointer'}} onClick={()=>handlePlus(index,item)}> + </span>
-                                                <b>{'item.qt' ? item.qt:qt}</b>
+                                                <b>{item.qt}</b>
                                                 <span style={{cursor:'pointer'}} onClick={()=>handleMinus(index,item)}> - </span>
                                             </div>
                                         </div>
