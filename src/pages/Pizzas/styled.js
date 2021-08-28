@@ -4,17 +4,132 @@ import img from '../../assets/image/imgPizzas.svg';
 
 export const PizzasPage = styled.div`
     width: 100%;
-    height: 100vh;
+    height: auto;
     background-image: url(${img});
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 
-    
     .container{
-        width: 80%;
+        width: 100%;
         height: 100%;
         display: flex;
+        justify-content: center;
+
+
+        .pizza-info{
+            display: flex;
+            width: 80%;
+            flex-direction: column;
+            margin-top: 100px;
+
+            .pizzas-item{
+                display: flex;
+                align-items: center;
+                width: 50%;
+                color: white;
+                background-color: rgba(0, 0, 0, 0.3);
+                margin-bottom: 25px;
+                border: 1px solid #4f4f4f;
+                padding-right: 3px;
+
+                img{
+                    width: 270px;
+                    height: 180px;
+                }
+
+                .pizza-desc{
+                    display: flex;
+                    flex: 1;
+                    flex-direction: column;
+                    p{
+                        margin: 10px 0;
+                        margin-left: 10px;
+                    }
+
+                    button{
+                        width: 30%;
+                        background-color: #00c632;
+                        color: white;
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+                        border: none;
+                        font-size: 16px;
+                        border-radius: 5px;
+
+                        &:hover{
+                            background-color: #00e639;
+                        }
+                    }
+                }
+            }
+        }
+
+        .modal-open{
+            width: 400px;
+            height: 100%;
+            display: flex;
+            position: absolute;
+            top: 0;
+            right: 0;
+            
+
+            .btn{
+                width:auto;
+                position: fixed;
+            }
+            .modal{
+                width: 20%;
+                height: 550px;
+                margin-top: 80px;
+                margin-right: 10px;
+                display: flex;
+                flex-direction: column;
+                color: white;
+                background-color: rgba(0, 0, 0, 0.5);
+                position: fixed;
+                overflow: auto;
+
+                >button{
+                width:auto;
+                background-color: rgba(0, 0, 0, 0.3);
+                font-weight: bold;
+                color: red;
+                border:none;
+                font-size:32px;
+            }
+                .modal-item{
+                    display: flex;
+                    flex-direction: column;
+                    margin: 12px 0;
+                    height: auto;
+
+                    
+                    img {
+                        width: 80px;
+                        height: 50px;
+                    }
+
+                    p{
+                        margin: 8px 0;
+                        padding: 0 7px;
+                        text-align: center;
+                    }
+                    span{
+                        margin-top: 10px;
+                    }
+
+                    .itens{
+                        margin-top: 10px;
+                        font-size:20px;
+                        span{
+                            margin: 0px 9px ;
+                            font-size: 27px
+                        }
+                    }
+                }
+            }
+        }
 
         button{
             margin-top: 90px;
@@ -42,7 +157,17 @@ export const PizzasPage = styled.div`
                 }
             }
         }
-       
+
+        .pizzas{
+            margin: 0 auto;
+            width: 50%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: red;
+        }
     }
 
 `;
