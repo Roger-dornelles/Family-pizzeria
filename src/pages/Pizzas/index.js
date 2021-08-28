@@ -1,4 +1,4 @@
-/* eslint-disable jsx-a11y/alt-text */
+
 import React,{useState,useEffect} from 'react';
 import {useDispatch,useSelector} from 'react-redux';
 
@@ -110,7 +110,7 @@ const Pizzas = ()=>{
                                 return(
 
                                         <div className="modal-item" key={index} id={item._id}>
-                                            <img src={item.image} />
+                                            <img src={item.image.url} alt="" />
                                             <p>{item.name}</p>
                                             <p>{item.description}</p>
                                             <span>R$: {(item.price * item.qt).toFixed(2)}</span>
