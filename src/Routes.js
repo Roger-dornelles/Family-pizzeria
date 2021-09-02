@@ -8,6 +8,8 @@ import About from './pages/About';
 import Pizzas from './pages/Pizzas';
 import Signin from './pages/Signin';
 import Signup from './pages/Signup';
+import Cart from './pages/Cart';
+import Drinks from './pages/Drinks';
 
 const Routes = () => {
     return (
@@ -23,6 +25,14 @@ const Routes = () => {
 
             <Route exact path="/Pizzas">
                 <Pizzas />
+            </Route>
+
+            <Route exact path="/Drinks">
+                <Drinks />
+            </Route>
+
+            <Route exact path="/Cart">
+                <Cart />
             </Route>
 
             <Route exact path="/Signin">

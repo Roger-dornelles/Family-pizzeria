@@ -20,11 +20,12 @@ const Header = ()=>{
                         <ul>
                             <li><Link to="/About">Sobre</Link></li>
                             <li><Link to="/Pizzas">Pizzas</Link></li>
+                            <li><Link to="/Drinks">Bebidas</Link></li>
 
                             {!logged && 
                                 <>
-                                    <li><Link to="/Signup">Cadastrar-se</Link></li>
                                     <li><Link to="/Signin">Login</Link></li>
+                                    <li><Link className="signup" to="/Signup">Cadastrar-se</Link></li>
                                 </>
                             }
 

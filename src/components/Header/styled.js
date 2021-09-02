@@ -9,7 +9,7 @@ export const HeaderPage = styled.div`
         display: flex;
         margin: 0 auto;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
         background-color: rgba(0, 0, 0,0.5);
         color:#fff;
         
@@ -24,6 +24,7 @@ export const HeaderPage = styled.div`
     
         nav{
             display: flex;
+
             ul,li{
                 justify-content: space-around;
                 display: flex;
@@ -37,6 +38,17 @@ export const HeaderPage = styled.div`
                 &:hover{
                     color:#cfcfcf;
                     border-bottom: 1px solid #cfcfcf;
+                }
+            }
+            .signup{
+                background-color: #6bd700;
+                padding: 3px;
+                border-radius: 5px;
+                
+                &:hover{
+                    border-bottom: none;
+                    background-color: #59b300;
+                    color:#fff;
                 }
             }
     

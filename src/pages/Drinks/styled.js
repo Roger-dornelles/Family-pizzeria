@@ -1,66 +1,66 @@
 import styled from 'styled-components';
 
-import img from '../../assets/image/imgPizzas.svg';
+import imgDrinks from '../../assets/image/imgDrinks.svg';
 
-export const PizzasPage = styled.div`
+
+export const DrinksPage = styled.div`
+
     width: 100%;
     min-height: 100vh;
-    background-image: url(${img});
+    background-image: url(${imgDrinks});
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:cover;
     background-position: center;
+    color:#ffff;
 
-    .container{
+    .container {
         width: 100%;
-        display: flex;
-        justify-content: center;
-
-
-        .pizza-info{
-            display: flex;
+        padding-top: 100px;
+        padding-bottom: 50px;
+        .drinks{
             width: 80%;
+            display: flex;
             flex-direction: column;
-            margin-top: 100px;
-
-            .pizzas-item{
-                display: flex;
-                align-items: center;
+    
+            .drink-description{
                 width: 50%;
-                color: white;
-                background-color: rgba(0, 0, 0, 0.3);
-                margin-bottom: 25px;
-                border: 1px solid #4f4f4f;
-                padding-right: 3px;
-
+                display: flex;
+                margin-bottom: 20px;
+                background-color: rgba(0,0,0,0.5);
                 img{
-                    width: 270px;
+                    width: 250px;
                     height: 180px;
                 }
-
-                .pizza-desc{
+    
+                .drink-itens{
                     display: flex;
                     flex: 1;
                     flex-direction: column;
-                    p{
-                        margin: 10px 0;
-                        margin-left: 10px;
-                    }
-
-                    button{
-                        width: 30%;
-                        background-color: #00c632;
-                        color: white;
-                        margin-top: 10px;
+                    align-items: center;
+                    justify-content: center;
+                    span{
                         margin-bottom: 10px;
+                    }
+                        
+                    button{
+                        margin-top: 20px;
+                        background-color: #00d500;
+                        color:#ffff;
+                        padding: 3px 12px;
+                        text-decoration: none;
+                        border-radius:4px;
                         border: none;
                         font-size: 16px;
-                        border-radius: 5px;
-
+                        cursor: pointer;
+    
                         &:hover{
-                            background-color: #00e639;
+                            background-color: #00ae00;
                         }
+    
                     }
+                    
                 }
+    
             }
         }
 
@@ -74,9 +74,15 @@ export const PizzasPage = styled.div`
             
 
             .btn{
-                width:auto;
-                position: fixed;
+                width:100px;
+                height:25px;
+                position: relative;
+                margin-top:80px;
+                margin-right: 200px;
+                cursor: pointer;
+                border: none;
             }
+
             .modal{
                 width: 20%;
                 height: 550px;
@@ -96,6 +102,7 @@ export const PizzasPage = styled.div`
                 color: red;
                 border:none;
                 font-size:32px;
+                cursor: pointer;
 
             }
                 .modal-item{
@@ -145,44 +152,5 @@ export const PizzasPage = styled.div`
                 }
             }
         }
-
-        button{
-            margin-top: 90px;
-            width: 100px;
-            height: 30px;
-            cursor: pointer;
-        }
-
-        .modal{
-            display: flex;
-
-            .close{
-                    display:flex;
-                    justify-content: flex-end;
-            }
-
-            form{
-                width: 50%;
-                display: flex;
-                flex-direction: column;
-                input{
-                    width: 100%;
-                    outline: none;
-                    border: none;
-                }
-            }
-        }
-
-        .pizzas{
-            margin: 0 auto;
-            width: 50%;
-            height: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            color: red;
-        }
     }
-
 `;

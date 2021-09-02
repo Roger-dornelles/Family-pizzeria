@@ -2,11 +2,13 @@
 /* eslint-disable no-unreachable */
 let initialState = {
     product: [],
+    drinks: []
 
 };
 
 const ProductsReducer = (state = initialState, action) =>{
     let product = [...state.product]
+    let drinks = [...state.drinks]
     switch(action.type){
         case 'ADD_PIZZA':
 
@@ -35,6 +37,37 @@ const ProductsReducer = (state = initialState, action) =>{
             }
             return {...state, product}
             break;
+
+            //----------------------------------------------------------------------------------------------------------------------------------------------------------------
+            // DRINKS 
+
+            case 'ADD_DRINKS':
+
+                let _id = action.payload.value._id;
+                let _index = drinks.findIndex(item => item._id === _id)
+                if(_index > -1){
+                    drinks[_index].qt += 1//action.payload.qt;
+        
+                }else{
+        
+                    drinks.push({
+                        ...action.payload.value,
+                        qt:1
+                    })
+                }
+                    return {...state, drinks}
+                break;
+        
+                case 'CHANGE_DRINKS':
+                    if(drinks[action.payload.key]){
+        
+                        if(drinks[action.payload.key].qt <= 0){
+                            drinks = drinks.filter((item,index) => index !== action.payload.key);
+                        }
+        
+                    }
+                    return {...state, drinks}
+                    break;
             
 
         default:

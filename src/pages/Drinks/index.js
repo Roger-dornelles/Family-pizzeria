@@ -1,35 +1,32 @@
-
-import React,{useState,useEffect} from 'react';
+import React,{useEffect,useState} from 'react';
 import { Link } from 'react-router-dom';
 import {useDispatch,useSelector} from 'react-redux';
 
-import { PizzasPage } from './styled'
-// api 
-import api from '../../api';
+import{ DrinksPage } from './styled';
 
-// components
 import Header from '../../components/Header';
 
+import api from '../../api';
 
-const Pizzas = ()=>{
+const Drinks = () =>{
     const dispatch = useDispatch();
-    const product = useSelector(state=>state.products.product);
+    const drinks = useSelector(state =>state.products.drinks);
+    console.log('DINKS ',drinks)
 
-
+    const [drink, setDrink ] = useState([]);
+    const [qt, setQt ] = useState([]);
     const [modalIsOpen, setIsOpen] = useState(false);
-    const [pizza,setPizza] = useState([]);
-
-    const [qt, setQt] = useState(1);
-
 
     useEffect(()=>{
-        const getPizza = async () =>{
-            let json = await api.getPizzas();
-            setPizza(json)
+        const getDrink = async () =>{
+            let json = await api.getDrinks();
+            setDrink(json.drinks);
+
         };
-        getPizza();
+        getDrink();
 
     },[]);
+
 
     const handlePlus = (key,value)=>{
         if(value.qt){
@@ -44,58 +41,57 @@ const Pizzas = ()=>{
         }
 
         dispatch({
-            type:'CHANGE_PRODUCT',
+            type:'CHANGE_DRINKS',
             payload:{key,value}
         })
     
     }
 
-    const handleAdd = (key, value) =>{
+    const handleAddDrinks = (key, value) =>{
         
             dispatch({
-                type:'ADD_PIZZA',
-                    payload:{value, qt,}
+                type:'ADD_DRINKS',
+                payload:{value, qt,}
             });
 
     }
 
-
     function openModal() {
-    setIsOpen(true);
-    }
+        setIsOpen(true);
+        }
+    
+        function closeModal() {
+            setIsOpen(false);
+        }
 
-    function closeModal() {
-        setIsOpen(false);
-    }
-
-    return (
-
-        <PizzasPage>
-            
-            <Header className="header"/>
-
+    return(
+        <DrinksPage>
+            <Header />
             <div className="container">
 
-                <div className="pizza-info">
-                    {pizza.map((item,index)=>{
+                <div className="drinks">
+
+                    {drink.map((item,index)=>{
                         return(
-                            <div key={index} id={item._id} className="pizzas-item" >
-                                <img src={item.image} alt={item.name}/>
-                                <div className='pizza-desc' >
-                                    <p>{item.name}</p>
-                                    <p>{item.description}</p>
-                                    <p>Preço: R$ {item.price.toFixed(2)}</p>
-                                    <button onClick={()=>handleAdd(index,item)}>Adicionar</button>
+                            <div className="drink-description" key={index} id={item._id}>
+                                <img src={item.image} alt={item.name} />
+                                <div className="drink-itens">
+                                    <span>{item.name}</span>
+                                    <span>R$ {(item.price.toFixed(2))}</span>
+
+                                        <button onClick={()=>handleAddDrinks(index,item)}>Adicionar</button>
+
                                 </div>
 
                             </div>
                         )
-                    })};
+                    })}
                 </div>
 
+
                 <div className="modal-open">
-                    {product.length > 0 && 
-                        <button className="btn"onClick={openModal}>Carrinho ({product.length})</button>
+                    {drinks.length > 0 && 
+                        <button className="btn" onClick={openModal}>Carrinho ({drinks.length})</button>
                     }
 
                     {modalIsOpen && 
@@ -105,7 +101,7 @@ const Pizzas = ()=>{
 
                                     <div className="modal-item">
                                         <h2>Carrinho</h2>
-                                        {product.map((item,index)=>{
+                                        {drinks.map((item,index)=>{
                                             return(
 
                                                 <div className="modal-item" key={index} id={item._id}>
@@ -122,7 +118,7 @@ const Pizzas = ()=>{
 
                                             )
                                         })}
-                                        {product.length > 0 &&
+                                        {drinks.length > 0 &&
                                             <Link className="cart" to="/cart">Finalizar</Link>
                                         }
                                     </div>
@@ -132,8 +128,10 @@ const Pizzas = ()=>{
 
                 </div>
             </div>
-        </PizzasPage>
+            
+        </DrinksPage>
     )
 };
 
-export default Pizzas;
+
+export default Drinks;

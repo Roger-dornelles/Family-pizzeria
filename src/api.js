@@ -12,16 +12,25 @@ export default {
     const json = await result.data;
     return json;
   },
+
   // login do usuario
   signin:async (email,password)=>{
     let result = await api.post('/user/signin',{email,password});
     let json = await result.data;
     return json;
   },
+
   //mostrar pizzas
   getPizzas: async()=>{
     let result = await api.get('/pizzas/search');
     let json = await result.data;
     return json.pizzas;
+  },
+
+  // mostrar bebidas
+  getDrinks: async()=>{
+    const result = await api.get('/drinks/search');
+    const json = await result.data;
+    return json;
   }
 };
