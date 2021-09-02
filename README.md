@@ -1,5 +1,7 @@
 EM DESENVOLVIMENTO 
 
+AS IMAGENS DOS PRODUTOS NÂO VÂO CARREGAR POR NÂO ESTAREM EM UM SERVIDOR.....
+
 Hospedado na Vercel:
 URL: https://family-pizzeria-duh4t6n6n-roger-dornelles.vercel.app
 
