@@ -9,6 +9,6 @@ Criação do projeto Family Pizzeria.
 
 Em desenvolvimento com a api.
 
-Api usada é api-pizzzeria
+Api usada é api-pizzeria
 
 Api usada para cadastro de usuario, login, adicionar pizzas e bebidas.
