@@ -1,7 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-
 // pages
 import Home from './pages/Home';
 import About from './pages/About';
@@ -10,8 +9,13 @@ import Signin from './pages/Signin';
 import Signup from './pages/Signup';
 import Cart from './pages/Cart';
 import Drinks from './pages/Drinks';
+import PageError from './pages/PageError';
+
+import { isLogged } from './helpers/AuthHandler'
 
 const Routes = () => {
+    const logged = isLogged();
+
     return (
         <Switch>
 
@@ -30,10 +34,13 @@ const Routes = () => {
             <Route exact path="/Drinks">
                 <Drinks />
             </Route>
-
-            <Route exact path="/Cart">
-                <Cart />
-            </Route>
+            
+            {logged && 
+            
+                <Route exact path="/Cart">
+                    <Cart />
+                </Route>
+            }
 
             <Route exact path="/Signin">
                 <Signin />
@@ -41,6 +48,10 @@ const Routes = () => {
 
             <Route exact path="/Signup">
                 <Signup />
+            </Route>
+
+            <Route>
+                <PageError />
             </Route>
         </Switch>
     )

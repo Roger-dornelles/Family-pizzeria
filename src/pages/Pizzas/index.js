@@ -1,8 +1,8 @@
-
 import React,{useState,useEffect} from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import {useDispatch,useSelector} from 'react-redux';
 
+import {isLogged} from '../../helpers/AuthHandler';
 import { PizzasPage } from './styled'
 // api 
 import api from '../../api';
@@ -14,12 +14,13 @@ import Header from '../../components/Header';
 const Pizzas = ()=>{
     const dispatch = useDispatch();
     const product = useSelector(state=>state.products.product);
-
+    const logged = isLogged();
+    const history = useHistory();
 
     const [modalIsOpen, setIsOpen] = useState(false);
     const [pizza,setPizza] = useState([]);
-
     const [qt, setQt] = useState(1);
+    const [warning, setWarning] = useState();
 
 
     useEffect(()=>{
@@ -59,6 +60,18 @@ const Pizzas = ()=>{
 
     }
 
+    const handleUserLogged = () =>{
+        if(logged === true){
+            history.replace('/cart')
+        }else{
+            setWarning('Você precisa estar logado para finalizar o pedido.');
+            setTimeout(() =>{
+
+                history.replace('/Signin')
+            },3000);
+        }
+    }
+
 
     function openModal() {
     setIsOpen(true);
@@ -72,7 +85,7 @@ const Pizzas = ()=>{
 
         <PizzasPage>
             
-            <Header className="header"/>
+            <Header/>
 
             <div className="container">
 
@@ -95,7 +108,7 @@ const Pizzas = ()=>{
 
                 <div className="modal-open">
                     {product.length > 0 && 
-                        <button className="btn"onClick={openModal}>Carrinho ({product.length})</button>
+                        <button className="btn" onClick={openModal}>Carrinho ({product.length})</button>
                     }
 
                     {modalIsOpen && 
@@ -105,6 +118,7 @@ const Pizzas = ()=>{
 
                                     <div className="modal-item">
                                         <h2>Carrinho</h2>
+                                        {warning && <span className="warning">{warning}</span>}
                                         {product.map((item,index)=>{
                                             return(
 
@@ -123,7 +137,7 @@ const Pizzas = ()=>{
                                             )
                                         })}
                                         {product.length > 0 &&
-                                            <Link className="cart" to="/cart">Finalizar</Link>
+                                            <button className="cart" onClick={handleUserLogged}>Finalizar</button>
                                         }
                                     </div>
                             
@@ -134,6 +148,6 @@ const Pizzas = ()=>{
             </div>
         </PizzasPage>
     )
-};
+}
 
 export default Pizzas;

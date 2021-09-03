@@ -14,9 +14,10 @@ export const DrinksPage = styled.div`
     color:#ffff;
 
     .container {
-        width: 100%;
+        width: 90%;
         padding-top: 100px;
         padding-bottom: 50px;
+
         .drinks{
             width: 80%;
             display: flex;
@@ -66,21 +67,21 @@ export const DrinksPage = styled.div`
 
         .modal-open{
             width: 400px;
-            height: 100%;
             display: flex;
             position: absolute;
             top: 0;
             right: 0;
-            
+            background-color: #00ae00;
 
             .btn{
                 width:100px;
                 height:25px;
-                position: relative;
+                position: fixed;
                 margin-top:80px;
-                margin-right: 200px;
+                right: 170px;
                 cursor: pointer;
                 border: none;
+                background: #fff;
             }
 
             .modal{
@@ -95,7 +96,7 @@ export const DrinksPage = styled.div`
                 position: fixed;
                 overflow: auto;
 
-                >button{
+                .btn-close{
                 width:auto;
                 background-color: rgba(0, 0, 0, 0.3);
                 font-weight: bold;
@@ -110,6 +111,14 @@ export const DrinksPage = styled.div`
                     flex-direction: column;
                     margin: 12px 0;
                     height: auto;
+
+                    .warning{
+                        width:100%;
+                        padding: 3px 0;
+                        text-align: center;
+                        background-color: #ffff77;
+                        color: #000;
+                    }
 
                     
                     img {
@@ -135,7 +144,7 @@ export const DrinksPage = styled.div`
                         }
                     }
 
-                    .cart{
+                    .cart-button{
                         background-color: #00c632;
                         color: #fff;
                         border: none;
@@ -143,7 +152,8 @@ export const DrinksPage = styled.div`
                         padding: 5px 0;
                         text-align: center;
                         margin: 15px auto;
-                        text-decoration: none;
+                        font-size: 16px;
+                        cursor: pointer;
 
                         &:hover{
                             background-color: #00e639;

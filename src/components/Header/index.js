@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Cookie from 'js-cookie';
 
 import { HeaderPage } from './styled';
 
@@ -8,6 +9,11 @@ import {isLogged} from '../../helpers/AuthHandler';
 
 const Header = ()=>{
     const logged = isLogged();
+
+    const handleClose = ()=>{
+        Cookie.remove('token');
+        window.location.reload();
+    }
 
     return(
         <HeaderPage>
@@ -30,7 +36,7 @@ const Header = ()=>{
                             }
 
                             {logged &&
-                                <li><Link to="/">Sair</Link></li>
+                                <li><Link to="/" onClick={handleClose}>Sair</Link></li>
                             }
                         </ul>
 

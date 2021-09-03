@@ -14,18 +14,19 @@ export const PizzasPage = styled.div`
         width: 100%;
         display: flex;
         justify-content: center;
-
-
+        
+        
         .pizza-info{
             display: flex;
-            width: 80%;
+            width: 60%;
             flex-direction: column;
             margin-top: 100px;
+
 
             .pizzas-item{
                 display: flex;
                 align-items: center;
-                width: 50%;
+                width: 60%;
                 color: white;
                 background-color: rgba(0, 0, 0, 0.3);
                 margin-bottom: 25px;
@@ -66,7 +67,6 @@ export const PizzasPage = styled.div`
 
         .modal-open{
             width: 400px;
-            height: 100%;
             display: flex;
             position: absolute;
             top: 0;
@@ -74,8 +74,14 @@ export const PizzasPage = styled.div`
             
 
             .btn{
+                margin-top:100px;
                 width:auto;
+                height: 22px;
+                padding:0 3px;
                 position: fixed;
+                border: none;
+
+
             }
             .modal{
                 width: 20%;
@@ -104,6 +110,13 @@ export const PizzasPage = styled.div`
                     margin: 12px 0;
                     height: auto;
 
+                    .warning{
+                        width:100%;
+                        padding: 3px 0;
+                        text-align: center;
+                        background-color: #ffff77;
+                        color: #000;
+                    }
                     
                     img {
                         width: 80px;
@@ -137,6 +150,7 @@ export const PizzasPage = styled.div`
                         text-align: center;
                         margin: 15px auto;
                         text-decoration: none;
+                        font-size: 16px;
 
                         &:hover{
                             background-color: #00e639;

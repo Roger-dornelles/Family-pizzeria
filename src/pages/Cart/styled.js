@@ -7,7 +7,7 @@ export const CartPage = styled.div`
     background-size: cover;
     background-position: center;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     color:#ffff;
@@ -15,13 +15,13 @@ export const CartPage = styled.div`
     .cart{
         width: 40%;
         height: auto;
-        padding: 50px 0;
+        padding: 30px 0;
         display: flex;
         flex-direction: column;
         background-color: rgba(0,0,0,0.5);
 
         h1{
-            margin-top:50px;
+            margin-top:20px;
             margin-bottom:30px;
         }
 
@@ -54,11 +54,15 @@ export const CartPage = styled.div`
             }
 
             .cart-itens{
+                display: flex;
+                flex-direction: row;
                 color:#ffff;
                 margin-top: 7px;
+                justify-content: flex-start;
     
                 span{
-                    margin-top: 5px;
+                    margin-top: 12px;
+                    margin-right: 15px;
                 }
             
             }
@@ -96,6 +100,9 @@ export const CartPage = styled.div`
                 border-radius:4px;
             }
             
+        }
+        h3{
+            margin-top:20px;
         }
     }
 

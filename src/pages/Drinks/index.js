@@ -1,6 +1,8 @@
 import React,{useEffect,useState} from 'react';
-import { Link } from 'react-router-dom';
 import {useDispatch,useSelector} from 'react-redux';
+import { useHistory } from 'react-router-dom';
+
+import {isLogged} from '../../helpers/AuthHandler';
 
 import{ DrinksPage } from './styled';
 
@@ -11,11 +13,13 @@ import api from '../../api';
 const Drinks = () =>{
     const dispatch = useDispatch();
     const drinks = useSelector(state =>state.products.drinks);
-    console.log('DINKS ',drinks)
+    const logged = isLogged();
+    const history = useHistory();
 
     const [drink, setDrink ] = useState([]);
     const [qt, setQt ] = useState([]);
     const [modalIsOpen, setIsOpen] = useState(false);
+    const [warning, setWarning] = useState();
 
     useEffect(()=>{
         const getDrink = async () =>{
@@ -54,6 +58,18 @@ const Drinks = () =>{
                 payload:{value, qt,}
             });
 
+    }
+
+    const handleUserLogged = () =>{
+        if(logged === true){
+            history.replace('/cart')
+        }else{
+            setWarning('Você precisa estar logado para finalizar o pedido.');
+            setTimeout(() =>{
+
+                history.replace('/Signin')
+            },3000);
+        }
     }
 
     function openModal() {
@@ -100,6 +116,7 @@ const Drinks = () =>{
                             <button className="btn-close" onClick={closeModal}>X</button>
 
                                     <div className="modal-item">
+                                        {warning && <span className="warning">{warning}</span>}
                                         <h2>Carrinho</h2>
                                         {drinks.map((item,index)=>{
                                             return(
@@ -119,7 +136,7 @@ const Drinks = () =>{
                                             )
                                         })}
                                         {drinks.length > 0 &&
-                                            <Link className="cart" to="/cart">Finalizar</Link>
+                                            <button className="cart-button"  onClick={handleUserLogged}>Finalizar</button>
                                         }
                                     </div>
                             

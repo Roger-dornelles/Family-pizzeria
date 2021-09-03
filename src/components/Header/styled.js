@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const HeaderPage = styled.div`
     position:fixed;
     width:100%;
+
     .menu{
         width: 100%;
         height: 70px;
@@ -26,13 +27,14 @@ export const HeaderPage = styled.div`
             display: flex;
 
             ul,li{
-                justify-content: space-around;
                 display: flex;
+                justify-content: space-around;
             }
     
             a{
                 text-decoration:none;
                 margin-left: 15px;
+                margin-right: 15px;
                 color:#fff;
 
                 &:hover{

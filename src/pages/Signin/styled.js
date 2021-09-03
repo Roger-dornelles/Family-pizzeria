@@ -4,7 +4,7 @@ import img from '../../assets/image/imgSignin.svg';
 
 export const SigninPage = styled.div`
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     background-image: url(${img});
     background-repeat: no-repeat;
@@ -53,6 +53,7 @@ export const SigninPage = styled.div`
             label{
                 width: 100%;
                 margin-bottom: 40px;
+
                 input{
                     width: 100%;
                     border: none;
@@ -103,6 +104,14 @@ export const SigninPage = styled.div`
                         background-color:#f90000;
                         color: white;
                     }
+                }
+            }
+
+            span{
+                font-size:16px;
+                
+                a{
+                    color: #fff;
                 }
             }
         }
