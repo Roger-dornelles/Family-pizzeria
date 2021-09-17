@@ -10,6 +10,7 @@ import Signup from './pages/Signup';
 import Cart from './pages/Cart';
 import Drinks from './pages/Drinks';
 import PageError from './pages/PageError';
+import AddProducts from './pages/AddProducts';
 
 import { isLogged } from './helpers/AuthHandler'
 
@@ -34,12 +35,17 @@ const Routes = () => {
             <Route exact path="/Drinks">
                 <Drinks />
             </Route>
+
             
             {logged && 
-            
-                <Route exact path="/Cart">
-                    <Cart />
-                </Route>
+                <>
+                    <Route exact path="/Cart">
+                        <Cart />
+                    </Route>
+                    <Route exact path="/AddProducts">
+                        <AddProducts />
+                    </Route>
+                </>
             }
 
             <Route exact path="/Signin">

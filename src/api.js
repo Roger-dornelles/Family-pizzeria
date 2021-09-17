@@ -36,10 +36,29 @@ export default {
     return json.pizzas;
   },
 
+  addpizza:async (datas)=>{
+    let token = await Cookie.get('token')
+    datas.append('token',token);
+
+    let result = await api.post(`/pizzas/add`,datas);
+    let json = await result.data;
+    return json;
+  },
+
   // mostrar bebidas
   getDrinks: async()=>{
     const result = await api.get('/drinks/search');
     const json = await result.data;
     return json;
+  },
+
+  addDrinks: async(datas)=>{
+    let token = await Cookie.get('token')
+    datas.append('token',token);
+
+    let result = await api.post('/drinks/add', datas);
+    let json = await result.data;
+    return json;
+
   }
 };
