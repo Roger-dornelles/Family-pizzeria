@@ -11,6 +11,8 @@ import Cart from './pages/Cart';
 import Drinks from './pages/Drinks';
 import PageError from './pages/PageError';
 import AddProducts from './pages/AddProducts';
+import DeleteProducts from './pages/DeleteProducts';
+import UpdateProducts from './pages/UpdateProducts';
 
 import { isLogged } from './helpers/AuthHandler'
 
@@ -44,6 +46,14 @@ const Routes = () => {
                     </Route>
                     <Route exact path="/AddProducts">
                         <AddProducts />
+                    </Route>
+
+                    <Route exact path="/DeleteProducts">
+                        <DeleteProducts />
+                    </Route>
+
+                    <Route exact path="/UpdateProducts">
+                        <UpdateProducts />
                     </Route>
                 </>
             }

@@ -35,7 +35,7 @@ export default {
     let json = await result.data;
     return json.pizzas;
   },
-
+  //adicionar pizza
   addpizza:async (datas)=>{
     let token = await Cookie.get('token')
     datas.append('token',token);
@@ -43,6 +43,25 @@ export default {
     let result = await api.post(`/pizzas/add`,datas);
     let json = await result.data;
     return json;
+  },
+
+  // excluir pizza
+  deletePizza: async (id)=>{
+    const token = Cookie.get('token');
+    let result = await api.delete(`/pizza/delete?token=${token}&_id=${id}`);
+    let json = await result.data;
+    return json;
+
+  },
+  //atualizar pizza
+  updatePizza: async(updates)=>{
+    let token = await Cookie.get('token');
+    updates.append('token',token);
+      let result = await api.post('/pizza/edit',updates);
+      let json = await result.data;
+      return json;
+
+
   },
 
   // mostrar bebidas
@@ -60,5 +79,22 @@ export default {
     let json = await result.data;
     return json;
 
+  },
+  // excluir bebidas
+  deleteDrink: async(id)=>{
+    let token = Cookie.get('token');
+    console.log('api ',id)
+    let result = await api.delete(`/drink/delete?token=${token}&_id=${id}`);
+    let json = await result.data;
+    return json;
+  },
+  //editar bebida
+  updateDrink: async(update)=>{
+    let token = await Cookie.get('token');
+    update.append('token',token);
+
+    let result = await api.post('/drinks/adit',update);
+    let json = await result.data;
+    return json;
   }
 };

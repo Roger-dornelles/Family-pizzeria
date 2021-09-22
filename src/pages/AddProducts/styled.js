@@ -116,6 +116,24 @@ export const AddProductsPage = styled.div`
                 }
             }
         }
+        .buttons-routes{
+            width: 100%;
+            display: flex;
+            justify-content:space-around;
+            margin-bottom: 20px;
+
+            a{
+                width: 25%;
+                padding: 4px 0;
+                font-size: 16px;
+                background-color: #0080ff;
+                color:#fff;
+                text-align: center;
+                text-decoration: none;
+                border-radius: 4px;
+                
+            }
+        }
     }
 
 

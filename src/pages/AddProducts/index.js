@@ -1,5 +1,5 @@
 import React,{useState, useRef} from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
 import { AddProductsPage } from './styled';
 
@@ -123,6 +123,10 @@ const AddProducts = ()=>{
                         <button className="save">Salvar</button>
                     </div>
                 </form>
+                <div className="buttons-routes">
+                    <Link to="/DeleteProducts">Excluir Produto</Link>
+                    <Link to="/UpdateProducts">Atualizar Produto</Link>
+                </div>
             </div>
         </AddProductsPage>
     )
