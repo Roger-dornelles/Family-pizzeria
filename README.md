@@ -1,6 +1,9 @@
 EM DESENVOLVIMENTO 
 
-AS IMAGENS DOS PRODUTOS NÂO VÂO CARREGAR POR NÂO ESTAREM EM UM SERVIDOR.....
+PARA NÂO PRECISAR CRIAR UMA CONTA USAR NO SITE:
+
+EMAIL: teste@teste.com
+SENHA: 123456
 
 Hospedado na Vercel:
 URL: https://family-pizzeria-duh4t6n6n-roger-dornelles.vercel.app
