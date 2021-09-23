@@ -77,8 +77,12 @@ const DeleteProducts = ()=>{
     return (
         <DeleteProductPage>
             <div className="container">
+                <div className="exit">
+                    <Link to="/AddProducts">X</Link>
+                </div>
 
                 <h2>Excluir Produto</h2>
+                
                 <div className="select-product">
                     {warning && <span className="warning">{warning}</span>}
                     {success && <p className="success">{success}</p>}
@@ -120,7 +124,7 @@ const DeleteProducts = ()=>{
                         )
                     })}
                 </div>
-                <Link to="/">Voltar</Link>
+                
             </div>
         </DeleteProductPage>
     )

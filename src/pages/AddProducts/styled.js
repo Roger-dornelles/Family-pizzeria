@@ -17,6 +17,26 @@ export const AddProductsPage = styled.div`
         background-color: #d6d6d6;
         border-radius: 12px;
 
+        .buttons-routes{
+            width: 100%;
+            display: flex;
+            margin-top: 30px;
+            justify-content:space-around;
+            margin-bottom: 20px;
+
+            a{
+                width: 25%;
+                padding: 4px 0;
+                font-size: 16px;
+                background-color: #949494;
+                color:#fff;
+                text-align: center;
+                text-decoration: none;
+                border-radius: 4px;
+                
+            }
+        }
+
         h2{
             margin-bottom: 30px;
             margin-top: 40px;
@@ -50,9 +70,10 @@ export const AddProductsPage = styled.div`
                 select{
                     border:none;
                     outline: none;
-                    width: 40%;
+                    width: 60%;
                     margin:10px 0;
-                    font-size: 15px;
+                    font-size: 16px;
+                    padding: 3px 0;
                     cursor: pointer;
                 }
 
@@ -116,24 +137,61 @@ export const AddProductsPage = styled.div`
                 }
             }
         }
+        
+    }
+
+    @media screen and (max-width: 770px){
+
+        .container {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 100%;
+
+
         .buttons-routes{
             width: 100%;
             display: flex;
-            justify-content:space-around;
-            margin-bottom: 20px;
+            flex-direction:column;
 
             a{
-                width: 25%;
-                padding: 4px 0;
-                font-size: 16px;
-                background-color: #0080ff;
-                color:#fff;
-                text-align: center;
-                text-decoration: none;
-                border-radius: 4px;
+                width: 55%;
+                margin-top: 10px;
                 
             }
         }
+
+        form{
+            width: 95%;
+
+
+            label{
+
+                select{
+                    width: 80%;
+                }
+
+                textarea{
+                    width: 100%;
+                    height: 110px;
+
+                }
+
+            }
+            .buttons {
+                width: 100%;
+                margin-bottom: 80px;
+                margin-top: 20px;
+
+                button{
+                    width: 40%;
+
+                }
+            }
+        }
+        
+    }
+
+
     }
 
 

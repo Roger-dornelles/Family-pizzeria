@@ -37,7 +37,7 @@ const Header = ()=>{
 
                             {logged &&
                                 <>
-                                    <li><Link to="/AddProducts">Adicionar produto</Link></li>
+                                    <li><Link to="/AddProducts">Administrativo</Link></li>
                                     <li><Link to="/" onClick={handleClose}>Sair</Link></li>
                                 </>
                             }

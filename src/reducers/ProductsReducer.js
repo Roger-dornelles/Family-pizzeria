@@ -71,7 +71,10 @@ const ProductsReducer = (state = initialState, action) =>{
             //---------------------------------------------------------------------------------------------------------
             // zerar cart
             case 'CONFIRM_PRODUCT':
-                return{...state, products: action.payload.p}
+                return{...state, 
+                    products: action.payload.product,
+                    drinks: action.payload.drink
+                }
                     
                 break;
 

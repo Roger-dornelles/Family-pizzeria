@@ -57,4 +57,62 @@ export const HeaderPage = styled.div`
         }
     }
 
+    @media screen and (max-width: 770px) {
+
+        .menu{
+        width: 100%;
+        height: auto;
+        display: flex;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0,0.5);
+        color:#fff;
+        
+        .logo{
+            
+            >a{
+                text-decoration: none;
+                color:#fff;
+                font-size: 22px;
+            }
+        }
+    
+        nav{
+            display: flex;
+            
+
+            ul,li{
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+            }
+    
+            a{
+                text-decoration:none;
+                margin-left: 15px;
+                margin-right: 15px;
+                color:#fff;
+
+                &:hover{
+                    color:#cfcfcf;
+                    border-bottom: 1px solid #cfcfcf;
+                }
+            }
+            .signup{
+                background-color: #6bd700;
+                padding: 3px;
+                border-radius: 5px;
+                
+                &:hover{
+                    border-bottom: none;
+                    background-color: #59b300;
+                    color:#fff;
+                }
+            }
+    
+        }
+    }
+    }
+
 `;

@@ -82,6 +82,10 @@ const AddProducts = ()=>{
     return(
         <AddProductsPage>
             <div className="container">
+                <div className="buttons-routes">
+                    <Link to="/DeleteProducts">Excluir Produto</Link>
+                    <Link to="/UpdateProducts">Atualizar Produto</Link>
+                </div>
 
                 <h2>Adicionar Produto.</h2>
 
@@ -123,10 +127,7 @@ const AddProducts = ()=>{
                         <button className="save">Salvar</button>
                     </div>
                 </form>
-                <div className="buttons-routes">
-                    <Link to="/DeleteProducts">Excluir Produto</Link>
-                    <Link to="/UpdateProducts">Atualizar Produto</Link>
-                </div>
+            
             </div>
         </AddProductsPage>
     )

@@ -125,7 +125,12 @@ const UpdateProducts = ()=>{
     return(
         <UpdateProductPage>
             <div className="container">
+                <div className="exit">
+                    <Link to="/AddProducts">X</Link>
+                </div>
+
                 <h2>Editar Produto</h2>
+
                 <div className="select-class">
                     {warning && <span className="warning">{warning}</span>}
                     <h3>Selecione a categoria do produto</h3>
@@ -210,7 +215,7 @@ const UpdateProducts = ()=>{
                         )
                     })}
                 </div>
-                <Link to="/AddProducts">Voltar</Link>
+            
             </div>
         </UpdateProductPage>
     )
