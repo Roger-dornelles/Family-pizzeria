@@ -5,8 +5,6 @@ PARA NÂO PRECISAR CRIAR UMA CONTA NO SITE USAR:
 EMAIL: teste@teste.com 
 SENHA: 123456
 
-Hospedado na Vercel
-URL: https://family-pizzeria-q3h0j8txa-roger-dornelles.vercel.app
 
 Criação do projeto Family Pizzeria.
 
