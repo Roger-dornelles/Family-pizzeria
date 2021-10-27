@@ -3,8 +3,6 @@ import { useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-
-
 import { SignupPage } from './styled';
 
 //helpers
@@ -59,12 +57,7 @@ const Signup = ()=>{
             setTimeout(()=>{
                 window.location.href ='/';
             },2500);
-
         }
-
-        
-        
-
     };
 
     const handleClose = ()=>{

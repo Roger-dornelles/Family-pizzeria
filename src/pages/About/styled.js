@@ -3,7 +3,7 @@ import img from '../../assets/image/imgAbout.svg';
 
 export const AboutPage = styled.div`
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     color: #fff;
     background-image: url(${img});
     background-repeat: no-repeat;
@@ -67,14 +67,13 @@ export const AboutPage = styled.div`
         }
     }
 
-
-    @media screen and (max-width:770px){
+    @media screen and (max-width:1024px){
         width: 100%;
         height: 100%;
 
 
         .container {   
-        
+        font-size: 22px;
         width: 100%;
 
         h1{
@@ -92,12 +91,84 @@ export const AboutPage = styled.div`
         .description-info{
             width: 100%;
             text-align: center;
+            margin-top:100px;
 
             .info{
                 margin-bottom: 30px;
+                display: flex;
+                justify-content:center;
+                flex-direction: column;
+
+                .card{
+                    width: 95%;
+                    text-align: center;
+                    margin-top: 35px;
+                    
+                    span{
+                        margin-top:35px;
+                    }
+
+                    p{
+                        margin-top: 15px;
+                    }
+    
+                }
             }
         }
     }
+
+    }
+
+
+    @media screen and (max-width:770px){
+        width: 100%;
+        height: 100%;
+
+
+        .container {   
+            font-size: 17px;
+            width: 100%;
+
+            h1{
+                padding-top:30px;
+                padding-left: 20px;
+                color: #ff0006;
+                cursor: pointer;
+            }
+
+            .description{
+                width: 80%;
+
+            }
+
+            .description-info{
+                width: 100%;
+                text-align: center;
+                margin-top:100px;
+
+                .info{
+                    margin-bottom: 30px;
+                    display: flex;
+                    justify-content:center;
+                    flex-direction: column;
+
+                    .card{
+                        width: 80%;
+                        text-align: center;
+                        margin-top: 35px;
+                        
+                        span{
+                            margin-top:35px;
+                        }
+
+                        p{
+                            margin-top: 15px;
+                        }
+        
+                    }
+                }
+            }
+        }
 
     }
 

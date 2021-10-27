@@ -80,12 +80,13 @@ export const HeaderPage = styled.div`
     
         nav{
             display: flex;
-            
+            margin-top: 10px;
 
             ul,li{
                 display: flex;
                 justify-content: center;
                 flex-direction: column;
+                line-height:20px;
             }
     
             a{

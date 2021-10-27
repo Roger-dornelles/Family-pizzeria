@@ -103,7 +103,7 @@ const Pizzas = ()=>{
 
                             </div>
                         )
-                    })};
+                    })}
                 </div>
 
                 <div className="modal-open">

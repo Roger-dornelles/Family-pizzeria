@@ -71,7 +71,6 @@ export const DrinksPage = styled.div`
             position: absolute;
             top: 0;
             right: 0;
-            background-color: #00ae00;
 
             .btn{
                 width:100px;
@@ -161,6 +160,253 @@ export const DrinksPage = styled.div`
                     }
                 }
             }
+        }
+    }
+
+    @media screen and (max-width:1024px) {
+
+.container {
+width: 80%;
+display: flex;
+padding-top: 100px;
+padding-bottom: 50px;
+
+.drinks{
+    width: 75%;
+    margin-top: 50px;
+
+    .drink-description{
+        width: 100%;
+
+        img{
+            width: 100px;
+            height: 150px;
+        }
+    }
+}
+
+.modal-open{
+    width: 100%;
+    display: flex;
+    position: absolute;
+    margin-top:30px;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    .btn{
+        width:100px;
+        height:25px;
+        position: fixed;
+        margin-top:110px;
+        right: 5px;
+        cursor: pointer;
+        border: none;
+        background: #fff;
+    }
+
+    .modal{
+        width: 100%;
+        height: 550px;
+        margin-top: 70px;
+        margin-right: 10px;
+        display: flex;
+        flex-direction: column;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: fixed;
+        overflow: auto;
+
+        .btn-close{
+        width:auto;
+        background-color: rgba(0, 0, 0, 0.3);
+        font-weight: bold;
+        color: red;
+        border:none;
+        font-size:32px;
+        cursor: pointer;
+
+    }
+        .modal-item{
+            display: flex;
+            flex-direction: column;
+            margin: 12px 0;
+            height: auto;
+
+            .warning{
+                width:100%;
+                padding: 3px 0;
+                text-align: center;
+                background-color: #ffff77;
+                color: #000;
+            }
+
+            
+            img {
+                width: 80px;
+                height: 50px;
+            }
+
+            p{
+                margin: 8px 0;
+                padding: 0 7px;
+                text-align: center;
+            }
+            span{
+                margin-top: 10px;
+            }
+
+            .itens{
+                margin-top: 10px;
+                font-size:20px;
+                span{
+                    margin: 0px 9px ;
+                    font-size: 27px
+                }
+            }
+
+            .cart-button{
+                background-color: #00c632;
+                color: #fff;
+                border: none;
+                width:120px;
+                padding: 5px 0;
+                text-align: center;
+                margin: 15px auto;
+                font-size: 16px;
+                cursor: pointer;
+
+                &:hover{
+                    background-color: #00e639;
+                }
+            }
+        }
+    }
+}
+}
+}
+
+    @media screen and (max-width:770px) {
+
+        .container {
+        width: 100%;
+        display: flex;
+        padding-top: 100px;
+        padding-bottom: 50px;
+
+        .drinks{
+            width: 95%;
+            margin-top: 50px;
+    
+            .drink-description{
+                width: 100%;
+
+                img{
+                    width: 100px;
+                    height: 150px;
+                }
+    
+            }
+        }
+
+        .modal-open{
+            width: 100%;
+            display: flex;
+            position: absolute;
+            margin-top:30px;
+            top: 0;
+            right: 0;
+            left: 0;
+
+            .btn{
+                width:100px;
+                height:25px;
+                position: fixed;
+                margin-top:110px;
+                right: 5px;
+                cursor: pointer;
+                border: none;
+                background: #fff;
+            }
+
+            .modal{
+                width: 100%;
+                height: 550px;
+                margin-top: 80px;
+                margin-right: 10px;
+                display: flex;
+                flex-direction: column;
+                color: white;
+                background-color: rgba(0, 0, 0, 0.9);
+                position: fixed;
+                overflow: auto;
+
+                .btn-close{
+                width:auto;
+                background-color: rgba(0, 0, 0, 0.3);
+                font-weight: bold;
+                color: red;
+                border:none;
+                font-size:32px;
+                cursor: pointer;
+
+            }
+                .modal-item{
+                    display: flex;
+                    flex-direction: column;
+                    margin: 12px 0;
+                    height: auto;
+
+                    .warning{
+                        width:100%;
+                        padding: 3px 0;
+                        text-align: center;
+                        background-color: #ffff77;
+                        color: #000;
+                    }
+
+                    
+                    img {
+                        width: 80px;
+                        height: 50px;
+                    }
+
+                    p{
+                        margin: 8px 0;
+                        padding: 0 7px;
+                        text-align: center;
+                    }
+                    span{
+                        margin-top: 10px;
+                    }
+
+                    .itens{
+                        margin-top: 10px;
+                        font-size:20px;
+                        span{
+                            margin: 0px 9px ;
+                            font-size: 27px
+                        }
+                    }
+
+                    .cart-button{
+                        background-color: #00c632;
+                        color: #fff;
+                        border: none;
+                        width:120px;
+                        padding: 5px 0;
+                        text-align: center;
+                        margin: 15px auto;
+                        font-size: 16px;
+                        cursor: pointer;
+
+                        &:hover{
+                            background-color: #00e639;
+                        }
+                    }
+                }
+            }
+        }
         }
     }
 `;

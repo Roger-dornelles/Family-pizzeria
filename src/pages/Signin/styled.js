@@ -122,17 +122,21 @@ export const SigninPage = styled.div`
         .signin{
             width: 70%;
             height: 50%;
+            font-size: 20px;
 
             form{
                 width: 100%;
                 
-
                 .btn{
-                display: flex;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    margin-top:0px;
+                    font-size: 23px;
 
                     button{
-                        margin-top:15px;
-                        width: 80px;
+                        margin-top:0px;
+                        width: 50%;
 
                     }
                 }
@@ -151,13 +155,14 @@ export const SigninPage = styled.div`
                 .btn{
                     display: flex;
                     flex-direction: column;
+                    width: 100%;
+                    button{
+                        margin-top:5px;
+                        width: 80%;
+    
+                    }
                 }
 
-                button{
-                    margin-top:5px;
-                    width: 80%;
-
-                }
             }
         }
     }

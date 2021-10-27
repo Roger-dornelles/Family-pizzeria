@@ -4,7 +4,7 @@ import img from '../../assets/image/imgSignup.svg';
 
 export const SignupPage = styled.div`
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     background-image: url(${img});
@@ -86,7 +86,7 @@ export const SignupPage = styled.div`
                 button{
                     cursor: pointer;
                     width: 40%;
-                    padding: 4px 0;
+                    padding: 4px ;
                     border: none;
                     font-size:18px;
                     border-radius: 7px;
@@ -103,6 +103,94 @@ export const SignupPage = styled.div`
                     &:hover{
                         background-color: #ff0000;
                         color: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 1340px){
+    .container{
+        form{
+        
+            .btn{
+                width: 80%;
+                display: flex;
+                flex-direction: column;
+                margin-top: 10px;
+
+            }
+        }
+    }
+}
+
+
+    @media screen and (max-width: 1024px){
+
+    .container{
+        width: 80%;
+        height: auto;
+        padding: 30px 0;
+        margin-top: 10px;
+        margin-bottom: 18px;
+
+        form{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            label{
+                width: 90%;
+            }
+
+            .btn{
+                width: 80%;
+                display: flex;
+                flex-direction: column;
+                margin-top: 10px;
+
+                button{
+                    width: 80%;
+                    margin-bottom: 12px;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
+
+
+    @media screen and (max-width: 770px){
+
+        .container{
+            width: 95%;
+            height: auto;
+            padding: 30px 0;
+            margin-top: 10px;
+            margin-bottom: 18px;
+
+            form{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+
+                .success{
+                    background-color: #00d936;
+                    color: #000000;
+                }
+
+                label{
+                    width: 90%;
+                }
+
+                .btn{
+                    width: 80%;
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 10px;
+
+                    button{
+                        width: 90%;
+                        margin-bottom: 12px;
                     }
                 }
             }
