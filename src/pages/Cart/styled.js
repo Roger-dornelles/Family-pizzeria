@@ -106,23 +106,22 @@ export const CartPage = styled.div`
         }
     }
 
-    @media screen and (max-width: 770px){
+
+    @media screen and (max-width: 1024px){
         .cart{
-        width: 100%;
-        height: auto;
-        padding: 30px 0;
-        display: flex;
-        flex-direction: column;
-        background-color: rgba(0,0,0,0.5);
-
-
-        .cart-buttons{
             width: 100%;
-        
+            height: auto;
+            padding: 30px 0;
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(0,0,0,0.5);
+            font-size:20px;
+
+            .cart-buttons{
+                width: 100%;
+            
+            }
         }
     }
-
-    }
-
 
 `;

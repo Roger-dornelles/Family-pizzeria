@@ -246,7 +246,7 @@ export const PizzasPage = styled.div`
 
             .btn{
                 margin-top:100px;
-                width:auto;
+                width:100px;
                 height: 22px;
                 padding:1px 3px;
                 position: fixed;
@@ -294,7 +294,7 @@ export const PizzasPage = styled.div`
                 display: flex;
                 width:90%;
                 flex-direction: column;
-                margin-top: 140px;
+                margin-top: 110px;
         
                 .pizzas-item{
                     display: flex;
@@ -332,48 +332,45 @@ export const PizzasPage = styled.div`
             }
 
             .modal-open{
-            width:100%;
-            display: flex;
-            position: absolute;
-            top: 20px;
-            right: 0;
-            left: 0;
-            
-
-            .btn{
-                margin-top:100px;
-                width:auto;
-                height: 22px;
-                padding:0 3px;
-                position: fixed;
-                left: 5px;
-                top: 15px;
-                border: none;
-                font-size:16px;
-
-            }
-            .modal{
-                width: 100%;
-                position: fixed;
-                height: 550px;
-                margin-top: 98px;
+                width:100%;
                 display: flex;
-                flex-direction: column;
-                color: white;
-                background-color: rgba(0, 0, 0, 0.9);
-                //position: fixed;
-                overflow: auto;
-                font-size:19px;
+                position: absolute;
+                top: 20px;
+                right: 0;
+                left: 0;
+            
+                .btn{
+                    min-width: 100px;
+                    margin-top:100px;
+                    position: fixed;
+                    left: 5px;
+                    top: -20px;
+                    border: none;
+                    font-size:20px;
 
-                >button{
-                width:auto;
-                background-color: rgba(0, 0, 0, 0.3);
-                font-weight: bold;
-                color: red;
-                border:none;
-                font-size:32px;
+                }
+                .modal{
+                    width: 100%;
+                    position: fixed;
+                    height: 550px;
+                    margin-top: 98px;
+                    display: flex;
+                    flex-direction: column;
+                    color: white;
+                    background-color: rgba(0, 0, 0, 0.9);
+                    //position: fixed;
+                    overflow: auto;
+                    font-size:19px;
 
-            }
+                    >button{
+                        width:auto;
+                        background-color: rgba(0, 0, 0, 0.3);
+                        font-weight: bold;
+                        color: red;
+                        border:none;
+                        font-size:32px;
+                    }
+                }
                 .modal-item{
                     display: flex;
                     flex-direction: column;

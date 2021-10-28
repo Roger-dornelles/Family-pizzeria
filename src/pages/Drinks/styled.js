@@ -173,7 +173,7 @@ padding-bottom: 50px;
 
 .drinks{
     width: 75%;
-    margin-top: 50px;
+    margin-top: 20px;
 
     .drink-description{
         width: 100%;
@@ -296,7 +296,7 @@ padding-bottom: 50px;
 
         .drinks{
             width: 95%;
-            margin-top: 50px;
+            margin-top: 20px;
     
             .drink-description{
                 width: 100%;
@@ -315,24 +315,22 @@ padding-bottom: 50px;
             position: absolute;
             margin-top:30px;
             top: 0;
-            right: 0;
             left: 0;
 
             .btn{
-                width:100px;
-                height:25px;
                 position: fixed;
-                margin-top:110px;
-                right: 5px;
+                left: -250px;
+                top: -35px;
                 cursor: pointer;
                 border: none;
                 background: #fff;
+                font-size: 20px;
             }
 
             .modal{
                 width: 100%;
                 height: 550px;
-                margin-top: 80px;
+                margin-top: 60px;
                 margin-right: 10px;
                 display: flex;
                 flex-direction: column;

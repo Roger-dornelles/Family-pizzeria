@@ -2,6 +2,8 @@ import React,{useState,useEffect} from 'react';
 import { useHistory } from 'react-router-dom';
 import {useDispatch,useSelector} from 'react-redux';
 
+import { BsCart4 } from "react-icons/bs";
+
 import {isLogged} from '../../helpers/AuthHandler';
 import { PizzasPage } from './styled'
 // api 
@@ -108,7 +110,7 @@ const Pizzas = ()=>{
 
                 <div className="modal-open">
                     {product.length > 0 && 
-                        <button className="btn" onClick={openModal}>Carrinho ({product.length})</button>
+                        <button className="btn" onClick={openModal}><BsCart4 /> {product.length}</button>
                     }
 
                     {modalIsOpen && 
