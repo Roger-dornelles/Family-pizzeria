@@ -1,9 +1,3 @@
-EM DESENVOLVIMENTO
-
-HOSPEDADO NA VERCEL.   
-
-PARA NÂO PRECISAR CRIAR UMA CONTA NO SITE USAR:
-
 
 
 Criação do projeto Family Pizzeria.
