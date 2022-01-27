@@ -4,8 +4,6 @@ HOSPEDADO NA VERCEL.
 
 PARA NÂO PRECISAR CRIAR UMA CONTA NO SITE USAR:
 
-EMAIL: teste@teste.com 
-SENHA: 123456
 
 
 Criação do projeto Family Pizzeria.
