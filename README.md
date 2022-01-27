@@ -4,6 +4,8 @@ Criação do projeto Family Pizzeria.
 
 Api usada é api-pizzeria
 
+Link:  https://github.com/Roger-dornelles/api-pizzeria
+
 Api usada para cadastro de usuario, login, adicionar pizzas e bebidas.
 
 LOGIN:
